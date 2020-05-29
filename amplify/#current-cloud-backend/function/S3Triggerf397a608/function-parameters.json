@@ -1,0 +1,12 @@
+{
+    "permissions": {
+        "api": {
+            "retail": [
+                "create",
+                "read",
+                "update",
+                "delete"
+            ]
+        }
+    }
+}

@@ -1,0 +1,22 @@
+type items @model @searchable {
+  id: ID!
+  title: String!
+  description: String
+  tags: [String]
+  category: String
+  price: Float
+  imageKeys: [String]!
+  created: AWSTimestamp
+  modified: AWSTimestamp
+  quantity: Int
+  promotions: [AWSJSON]
+  media: [AWSJSON]
+  labels: [String]
+}
+type order @model @searchable {
+  id: ID!
+  items: [AWSJSON]!
+  mobileNumber: String!
+  created: AWSTimestamp
+  modified: AWSTimestamp
+}

@@ -1,0 +1,141 @@
+{
+	"providers": {
+		"awscloudformation": {
+			"AuthRoleName": "amplify-retail-dev-173217-authRole",
+			"UnauthRoleArn": "arn:aws:iam::973185627585:role/amplify-retail-dev-173217-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::973185627585:role/amplify-retail-dev-173217-authRole",
+			"Region": "us-east-1",
+			"DeploymentBucketName": "amplify-retail-dev-173217-deployment",
+			"UnauthRoleName": "amplify-retail-dev-173217-unauthRole",
+			"StackName": "amplify-retail-dev-173217",
+			"StackId": "arn:aws:cloudformation:us-east-1:973185627585:stack/amplify-retail-dev-173217/9084cad0-8d85-11ea-b43c-0ed24b955b13",
+			"AmplifyAppId": "d17xbj0aofotnk"
+		}
+	},
+	"api": {
+		"retail": {
+			"service": "AppSync",
+			"providerPlugin": "awscloudformation",
+			"output": {
+				"authConfig": {
+					"additionalAuthenticationProviders": [],
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY",
+						"apiKeyConfig": {
+							"description": "api key",
+							"apiKeyExpirationDays": "365"
+						}
+					}
+				},
+				"GraphQLAPIIdOutput": "bgv3jy356fdazfwtixc5ixm2ri",
+				"GraphQLAPIEndpointOutput": "https://sh3at5nlsnhbjmw5s5xl5sjd4e.appsync-api.us-east-1.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-z45a3d4z6bfujongcwdtqkorye"
+			},
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-retail-dev-173217-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiretail"
+			},
+			"lastPushTimeStamp": "2020-05-29T20:26:13.828Z",
+			"lastPushDirHash": "NAIjAOMuQTqrB0o6PxT7STj1d+k="
+		},
+		"retail-dev": {
+			"service": "AppSync",
+			"output": {
+				"authConfig": {
+					"defaultAuthentication": {
+						"authenticationType": "API_KEY"
+					},
+					"additionalAuthenticationProviders": null
+				},
+				"GraphQLAPIIdOutput": "bgv3jy356fdazfwtixc5ixm2ri",
+				"GraphQLAPIEndpointOutput": "https://sh3at5nlsnhbjmw5s5xl5sjd4e.appsync-api.us-east-1.amazonaws.com/graphql",
+				"name": "retail-dev",
+				"region": "us-east-1",
+				"GraphQLAPIKeyOutput": "da2-z45a3d4z6bfujongcwdtqkorye"
+			},
+			"lastPushTimeStamp": "2020-05-20T03:27:32.164Z"
+		}
+	},
+	"auth": {
+		"retail8bf6400e": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": [],
+			"customAuth": false,
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-retail-dev-173217-deployment/amplify-cfn-templates/auth/retail8bf6400e-cloudformation-template.yml",
+				"logicalId": "authretail8bf6400e"
+			},
+			"lastPushTimeStamp": "2020-05-29T20:26:13.815Z",
+			"output": {
+				"AppClientSecret": "ogtnoo38po04ic757crmoiokivvgsgp88a9al0llh8i3o9v805k",
+				"UserPoolId": "us-east-1_4OEHQYPdf",
+				"AppClientIDWeb": "78aemqdknm39vjj41592jup5pc",
+				"AppClientID": "1eeb9pq0nvfvkq6s4uphh59suk",
+				"IdentityPoolId": "us-east-1:ed2d246f-deed-4741-89da-5afad22b410c",
+				"IdentityPoolName": "retail8bf6400e_identitypool_8bf6400e__dev",
+				"UserPoolName": "retail8bf6400e_userpool_8bf6400e"
+			},
+			"lastPushDirHash": "z7bLyh20N+e8Ccf5jnXmz/LYxXM="
+		}
+	},
+	"storage": {
+		"retail": {
+			"service": "S3",
+			"providerPlugin": "awscloudformation",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-retail-dev-173217-deployment/amplify-cfn-templates/storage/s3-cloudformation-template.json",
+				"logicalId": "storageretail"
+			},
+			"lastPushTimeStamp": "2020-05-29T20:26:13.818Z",
+			"output": {
+				"BucketName": "retail9765318dece64d78837883e645fe092b173217-dev",
+				"Region": "us-east-1"
+			},
+			"lastPushDirHash": "qIDA9XiTxzEk4WWSNJ5TE8puD8A=",
+			"dependsOn": [
+				{
+					"category": "function",
+					"resourceName": "S3Triggerf397a608",
+					"attributes": [
+						"Name",
+						"Arn",
+						"LambdaExecutionRole"
+					]
+				}
+			]
+		}
+	},
+	"function": {
+		"S3Triggerf397a608": {
+			"service": "Lambda",
+			"providerPlugin": "awscloudformation",
+			"build": true,
+			"lastBuildTimeStamp": "2020-05-17T21:56:25.391Z",
+			"lastPackageTimeStamp": "2020-05-17T21:56:32.448Z",
+			"distZipFilename": "S3Triggerf397a608-4f54646a4c2f79346b66-build.zip",
+			"providerMetadata": {
+				"s3TemplateURL": "https://s3.amazonaws.com/amplify-retail-dev-173217-deployment/amplify-cfn-templates/function/S3Triggerf397a608-cloudformation-template.json",
+				"logicalId": "functionS3Triggerf397a608"
+			},
+			"lastPushTimeStamp": "2020-05-29T20:26:13.822Z",
+			"output": {
+				"Region": "us-east-1",
+				"Arn": "arn:aws:lambda:us-east-1:973185627585:function:S3Triggerf397a608-dev",
+				"Name": "S3Triggerf397a608-dev",
+				"LambdaExecutionRole": "S3Triggerf397a608LambdaRolef397a608-dev"
+			},
+			"lastPushDirHash": "4JYAPKkP3qq6Tnn5YPIXPbMvAd0=",
+			"dependsOn": [
+				{
+					"category": "api",
+					"resourceName": "retail",
+					"attributes": [
+						"GraphQLAPIIdOutput",
+						"GraphQLAPIEndpointOutput"
+					]
+				}
+			]
+		}
+	}
+}
